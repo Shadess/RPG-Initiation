@@ -1,0 +1,14 @@
+.charinput {
+    margin: 0 22px 0 0;
+}
+
+.numinput {
+    margin: 0;
+    max-width: 102px;
+}
+
+.list-group-item .delbutton {
+    margin-left: -152px;
+    line-height: 0;
+    padding: 10px;
+}

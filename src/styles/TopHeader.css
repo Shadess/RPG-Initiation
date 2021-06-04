@@ -1,0 +1,14 @@
+.top-header {
+    height: 10vmin;
+    text-align: left;
+    width: 95%;
+}
+
+.top-header form {
+    padding: 22px 0 0;
+}
+
+.top-header form .submitadjust {
+    margin: 3px 0 0;
+    vertical-align: top;
+}
