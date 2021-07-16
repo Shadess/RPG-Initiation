@@ -41,25 +41,25 @@ export default class TopPlayer extends React.Component {
     render() {
         return (
             <div className="top-header">
-                <form className="row row-cols-lg-auto g-3 align-items-center" onSubmit={this.handleSubmit}>
-                    <div className="col-12">
+                <form className="row g-4 align-items-center" onSubmit={this.handleSubmit}>
+                    <div className="col-auto">
                         <label className="visually-hidden" htmlFor="characterNameInput">Name</label>
                         <input id="characterNameInput" className="form-control" type="text" placeholder="character name" required
                             value={this.state.charName}
                             onChange={this.handleNameChange} />
                     </div>
 
-                    <div className="col-12">
+                    <div className="col-auto">
                         <label className="visually-hidden" htmlFor="characterInitInput">Initiation</label>
                         <input id="characterInitInput" className="form-control" type="number" max="1000" required
                             value={this.state.charInit}
                             onChange={this.handleInitChange} />
                     </div>
 
-                    <div className="col-12">
+                    <div className="col-auto">
                         <button type="submit" className="btn btn-primary submitadjust">Add</button>
                     </div>
-                    <div className="col-12">
+                    <div className="col">
                         <button type="button" className="btn btn-secondary submitadjust" onClick={this.handleClear}>Clear</button>
                     </div>
                 </form>
