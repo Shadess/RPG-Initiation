@@ -4,17 +4,11 @@ version: 2.1
 orbs:
   # Declare a dependency on the welcome-orb
   node: circleci/node@4.5.1
-jobs:
-  test-job:
-    docker:
-      # replace with your preferred image
-      - image: cimg/base
-    steps:
-      - node/install-packages:
-          pkg-manager: yarn
 # Orchestrate or schedule a set of jobs
 workflows:
-  # Name the workflow "welcome"
-  test-workflow:
-    jobs:
-      - test-job
+    example-workflow:
+      jobs:
+        - node/test:
+            pkg-manager: yarn 
+            run-command: test 
+            version: '14.17.3' 
