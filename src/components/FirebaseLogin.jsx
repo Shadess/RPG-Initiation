@@ -1,6 +1,11 @@
 import React from 'react';
+import { withFirebase } from './Firebase';
 
-export default class FirebaseLogin extends React.Component {
+class FirebaseLogin extends React.Component {
+    componentDidMount() {
+        this.props.firebase.ui.start('#firebaseui-auth-container', this.props.firebase.uiConfig);
+    }
+
     render() {
         return (
             <>
@@ -11,3 +16,5 @@ export default class FirebaseLogin extends React.Component {
         )
     }
 }
+
+export default withFirebase(FirebaseLogin);

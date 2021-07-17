@@ -1,11 +1,12 @@
-import PlayerItem from './components/PlayerItem';
-import TopHeader from './components/TopHeader';
-import { store } from './store/store';
+import React from 'react';
+import PlayerItem from './PlayerItem';
+import TopHeader from './TopHeader';
+import { store } from '../store/store';
 import { useSelector } from 'react-redux';
 import {
     selectPlayers,
     sort
-  } from './store/initiationSlice';
+  } from '../store/initiationSlice';
 
 function PlayerList() {
     return useSelector(selectPlayers).map((player) =>
