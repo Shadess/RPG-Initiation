@@ -13,6 +13,7 @@
         "react-scripts": "^4.0.3"
     },
     "scripts": {
+        "clear-install": "rm -rf node_modules && yarn",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
@@ -42,8 +43,7 @@
         "@testing-library/react": "^11.2.7",
         "firebaseui": "^4.8.0",
         "npm-watch": "^0.9.0",
-        "ts-migrate": "^0.1.20",
-        "web-vitals": "^2.0.1"
+        "ts-migrate": "^0.1.20"
     },
     "watch": {
         "build": "src/"
