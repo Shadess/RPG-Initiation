@@ -5,8 +5,9 @@ import { store } from '../store/store';
 import {
     addPlayer
 } from '../store/initiationSlice';
+import { withFirebase } from './Firebase';
 
-export default class TopPlayer extends React.Component {
+class TopPlayer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,6 +17,7 @@ export default class TopPlayer extends React.Component {
 
         this.handleClear = this.handleClear.bind(this);
         this.handleInitChange = this.handleInitChange.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -26,6 +28,10 @@ export default class TopPlayer extends React.Component {
 
     handleInitChange(event) {
         this.setState({ charInit: event.target.value });
+    }
+
+    handleLogout() {
+        this.props.firebase.auth.signOut();
     }
 
     handleNameChange(event) {
@@ -41,7 +47,7 @@ export default class TopPlayer extends React.Component {
     render() {
         return (
             <div className="top-header">
-                <form className="row g-4 align-items-center" onSubmit={this.handleSubmit}>
+                <form className="row g-5 align-items-center" onSubmit={this.handleSubmit}>
                     <div className="col-auto">
                         <label className="visually-hidden" htmlFor="characterNameInput">Name</label>
                         <input id="characterNameInput" className="form-control" type="text" placeholder="character name" required
@@ -59,11 +65,16 @@ export default class TopPlayer extends React.Component {
                     <div className="col-auto">
                         <button type="submit" className="btn btn-primary submitadjust">Add</button>
                     </div>
-                    <div className="col">
+                    <div className="col-auto">
                         <button type="button" className="btn btn-secondary submitadjust" onClick={this.handleClear}>Clear</button>
+                    </div>
+                    <div className="col-auto">
+                        <button type="button" className="btn btn-warning" onClick={this.handleLogout}>Logout</button>
                     </div>
                 </form>
             </div>
         )
     }
 }
+
+export default withFirebase(TopPlayer);
