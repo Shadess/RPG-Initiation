@@ -1,24 +1,25 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import FirebaseLogin from './components/FirebaseLogin';
 import InitiationMain from './components/InitiationMain';
 import { withFirebase } from './components/Firebase';
 
 // class App extends React.Component {
-function App(props) {
+// function App(props: any) {
+export const App: FunctionComponent<any> = (props: any) => {
   const [authUser, setAuthUser] = useState(null);
 
   useEffect(() => {
-    props.firebase.auth.onAuthStateChanged(aUser => setAuthUser(aUser));
+    props.firebase.auth.onAuthStateChanged((aUser: any) => setAuthUser(aUser));
   });
 
   return (
     <div className="App">
       <header className="App-header">
-        { authUser ? <InitiationMain></InitiationMain> : <FirebaseLogin></FirebaseLogin> }
+        {authUser ? <InitiationMain /> : <FirebaseLogin />}
       </header>
     </div>
   );
-}
+};
 
 export default withFirebase(App);

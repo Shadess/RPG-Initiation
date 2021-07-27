@@ -1,0 +1,7 @@
+{
+  "endOfLine": "auto",
+  "singleQuote": true,
+  "trailingComma": "all",
+  "jsxBracketSameLine": false,
+  "bracketSpacing": true
+}
