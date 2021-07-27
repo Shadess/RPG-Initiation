@@ -22,7 +22,8 @@
         "typescript": "^4.3.5"
     },
     "scripts": {
-        "clear-install": "rm -rf node_modules && yarn",
+        "nuke": "rm -rf node_modules && yarn",
+        "nuke-windows": "rmdir /s node_modules && yarn",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
@@ -64,7 +65,6 @@
         "eslint-plugin-prettier": "^3.4.0",
         "eslint-plugin-react": "^7.24.0",
         "eslint-plugin-react-hooks": "^4.2.0",
-        "jest": "^27.0.6",
         "npm-watch": "^0.9.0",
         "prettier": "^2.3.2",
         "stylelint": "^13.13.1",

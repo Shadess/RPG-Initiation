@@ -25,6 +25,5 @@ ReactDOM.render(
         <App />
       </FirebaseContext.Provider>
     </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>, document.getElementById('root')
 );

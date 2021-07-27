@@ -6,18 +6,19 @@ import { useSelector } from 'react-redux';
 import {
     selectPlayers,
     sort
-  } from '../store/initiationSlice';
+} from '../store/initiationSlice';
+import Player from 'models/Player';
 
 function PlayerList() {
-    return useSelector(selectPlayers).map((player) =>
-      <PlayerItem key={player.GetName()} player={player}></PlayerItem>
+    return useSelector(selectPlayers).map((player: Player) =>
+        <PlayerItem key={player.GetName()} player={player}></PlayerItem>
     );
-  }
+}
 
 export default class FirebaseLogin extends React.Component {
     handleSort() {
         store.dispatch(sort());
-      }
+    }
 
     render() {
         return (
