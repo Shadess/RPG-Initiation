@@ -1,29 +1,32 @@
 export default class Player {
-    initiation = 0.0;
-    name = '';
+  initiation = 0.0;
 
-    constructor(name, initiation) {
-        this.SetInitiation(initiation);
-        this.SetName(name);
-    }
+  name = '';
 
-    Equals(comparePlayer) {
-        return (comparePlayer instanceof Player) ? comparePlayer.GetName() === this.name : false;
-    }
+  constructor(name, initiation) {
+    this.SetInitiation(initiation);
+    this.SetName(name);
+  }
 
-    GetInitiation() {
-        return this.initiation;
-    }
+  Equals(comparePlayer) {
+    return comparePlayer instanceof Player
+      ? comparePlayer.GetName() === this.name
+      : false;
+  }
 
-    GetName() {
-        return this.name;
-    }
+  GetInitiation() {
+    return this.initiation;
+  }
 
-    SetInitiation(init) {
-        this.initiation = isNaN(parseFloat(init)) ? 0 : parseFloat(init);
-    }
+  GetName() {
+    return this.name;
+  }
 
-    SetName(name) {
-        this.name = String(name);
-    }
+  SetInitiation(init) {
+    this.initiation = Number.isNaN(parseFloat(init)) ? 0 : parseFloat(init);
+  }
+
+  SetName(name) {
+    this.name = String(name);
+  }
 }

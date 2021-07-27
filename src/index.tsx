@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
 import './index.css';
+import { Provider } from 'react-redux';
 import App from './App';
 import { store } from './store/store';
-import { Provider } from 'react-redux';
 import Firebase, { FirebaseContext } from './components/Firebase';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -25,5 +25,6 @@ ReactDOM.render(
         <App />
       </FirebaseContext.Provider>
     </Provider>
-  </React.StrictMode>, document.getElementById('root')
+  </React.StrictMode>,
+  document.getElementById('root'),
 );
