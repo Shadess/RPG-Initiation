@@ -20,54 +20,60 @@ export const PlayerItem: FunctionComponent<IPlayerItemProps> = ({ player }) => {
   const updateCharInitiation = useCallback(() => {
     player.SetInitiation(updateCharInit);
     setInitInput(false);
-  }, []);
+  }, [player, updateCharInit]);
 
   const updateCharacterName = useCallback(() => {
     player.SetName(updateCharName);
     setNameInput(false);
-  }, []);
+  }, [player, updateCharName]);
 
   const handleDelete = useCallback(() => {
     store.dispatch(removePlayer(player));
-  }, []);
+  }, [player]);
 
   const handleInitBlur = useCallback(() => {
     updateCharInitiation();
-  }, []);
+  }, [updateCharInitiation]);
 
   const handleInitChange = useCallback((event) => {
     setCharInit(event.target.value);
   }, []);
 
-  const handleInitKeyPress = useCallback((event) => {
-    if (event.keyCode === 13) {
-      updateCharInitiation();
-    }
-  }, []);
+  const handleInitKeyPress = useCallback(
+    (event) => {
+      if (event.keyCode === 13) {
+        updateCharInitiation();
+      }
+    },
+    [updateCharInitiation],
+  );
 
   const handleNameBlur = useCallback(() => {
     updateCharacterName();
-  }, []);
+  }, [updateCharacterName]);
 
   const handleNameChange = useCallback((event) => {
     setCharName(event.target.value);
   }, []);
 
-  const handleNameKeyPress = useCallback((event) => {
-    if (event.keyCode === 13) {
-      updateCharacterName();
-    }
-  }, []);
+  const handleNameKeyPress = useCallback(
+    (event) => {
+      if (event.keyCode === 13) {
+        updateCharacterName();
+      }
+    },
+    [updateCharacterName],
+  );
 
   const handleShowInitInput = useCallback(() => {
     setInitInput(true);
     setCharInit(player.GetInitiation());
-  }, []);
+  }, [player]);
 
   const handleShowNameInput = useCallback(() => {
     setNameInput(true);
     setCharName(player.GetName());
-  }, []);
+  }, [player]);
 
   return (
     <li className="list-group-item d-flex justify-content-between align-items-center">
