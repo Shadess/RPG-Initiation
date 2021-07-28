@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/no-autofocus */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import Player from 'models/Player';
 import { FunctionComponent, useCallback, useState } from 'react';
+import Player from '../models/Player';
 import { removePlayer } from '../store/initiationSlice';
 import { store } from '../store/store';
 import '../styles/PlayerItem.css';

@@ -1,6 +1,6 @@
-import { useFirebase } from 'components/Firebase/context';
 import firebase from 'firebase';
 import { FunctionComponent, useEffect, useState } from 'react';
+import { useFirebase } from './components/Firebase/context';
 import './App.css';
 import FirebaseLogin from './components/FirebaseLogin';
 import InitiationMain from './components/InitiationMain';
