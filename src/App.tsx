@@ -1,16 +1,16 @@
-import './App.css';
+import { useFirebase } from 'components/Firebase/context';
+import firebase from 'firebase';
 import { FunctionComponent, useEffect, useState } from 'react';
+import './App.css';
 import FirebaseLogin from './components/FirebaseLogin';
 import InitiationMain from './components/InitiationMain';
-import { withFirebase } from './components/Firebase';
 
-// class App extends React.Component {
-// function App(props: any) {
-export const App: FunctionComponent<any> = (props: any) => {
-  const [authUser, setAuthUser] = useState(null);
+export const App: FunctionComponent = () => {
+  const firebaseObject = useFirebase();
+  const [authUser, setAuthUser] = useState<firebase.User | null>(null);
 
   useEffect(() => {
-    props.firebase.auth.onAuthStateChanged((aUser: any) => setAuthUser(aUser));
+    firebaseObject.auth.onAuthStateChanged((aUser) => setAuthUser(aUser));
   });
 
   return (
@@ -22,4 +22,4 @@ export const App: FunctionComponent<any> = (props: any) => {
   );
 };
 
-export default withFirebase(App);
+export default App;

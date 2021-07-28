@@ -1,79 +1,79 @@
 {
-    "name": "rpg-initiation",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "@craco/craco": "^6.2.0",
-        "@dealmore/craco-plugin-babel-include": "^1.0.0",
-        "@material-ui/core": "^4.12.2",
-        "@material-ui/icons": "^4.11.2",
-        "@reduxjs/toolkit": "^1.6.0",
-        "@sentry/react": "^6.10.0",
-        "@sentry/tracing": "^6.10.0",
-        "bootstrap": "^5.0.2",
-        "cra-template": "1.1.2",
-        "firebase": "^8.7.1",
-        "firebaseui": "^4.8.0",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-redux": "^7.2.4",
-        "react-scripts": "^4.0.3",
-        "typesafe-actions": "^5.1.0",
-        "typescript": "^4.3.5"
-    },
-    "scripts": {
-        "nuke": "rm -rf node_modules && yarn",
-        "nuke-windows": "rmdir /s node_modules && yarn",
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
-        "watch": "npm-watch"
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "devDependencies": {
-        "@testing-library/jest-dom": "^5.12.0",
-        "@testing-library/react": "^11.2.7",
-        "@types/jest": "^26.0.24",
-        "@types/node": "^16.4.3",
-        "@types/react": "^17.0.15",
-        "@types/react-dom": "^17.0.9",
-        "@types/react-redux": "^7.1.18",
-        "@typescript-eslint/eslint-plugin": "^4.28.5",
-        "@typescript-eslint/parser": "^4.28.5",
-        "eslint-config-airbnb": "^18.2.1",
-        "eslint-config-prettier": "^8.3.0",
-        "eslint-plugin-import": "^2.23.4",
-        "eslint-plugin-jsx-a11y": "^6.4.1",
-        "eslint-plugin-prettier": "^3.4.0",
-        "eslint-plugin-react": "^7.24.0",
-        "eslint-plugin-react-hooks": "^4.2.0",
-        "npm-watch": "^0.9.0",
-        "prettier": "^2.3.2",
-        "stylelint": "^13.13.1",
-        "ts-jest": "^27.0.4",
-        "ts-migrate": "^0.1.20",
-        "ts-unused-exports": "^7.0.3",
-        "utility-types": "^3.10.0"
-    },
-    "watch": {
-        "build": "src/"
-    }
+  "name": "rpg-initiation",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^6.2.0",
+    "@dealmore/craco-plugin-babel-include": "^1.0.0",
+    "@material-ui/core": "^4.12.2",
+    "@material-ui/icons": "^4.11.2",
+    "@reduxjs/toolkit": "^1.6.0",
+    "@sentry/react": "^6.10.0",
+    "@sentry/tracing": "^6.10.0",
+    "bootstrap": "^5.0.2",
+    "cra-template": "1.1.2",
+    "firebase": "^8.7.1",
+    "firebaseui": "^4.8.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-scripts": "^4.0.3",
+    "typesafe-actions": "^5.1.0",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "nuke": "rm -rf node_modules && yarn",
+    "nuke-windows": "rmdir /s node_modules && yarn",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "watch": "npm-watch"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.4.3",
+    "@types/react": "^17.0.15",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-redux": "^7.1.18",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "npm-watch": "^0.9.0",
+    "prettier": "^2.3.2",
+    "stylelint": "^13.13.1",
+    "ts-jest": "^27.0.4",
+    "ts-migrate": "^0.1.20",
+    "ts-unused-exports": "^7.0.3",
+    "utility-types": "^3.10.0"
+  },
+  "watch": {
+    "build": "src/"
+  }
 }
