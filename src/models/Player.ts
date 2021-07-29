@@ -3,12 +3,12 @@ export default class Player {
 
   name = '';
 
-  constructor(name, initiation) {
+  constructor(name: string, initiation: number) {
     this.SetInitiation(initiation);
     this.SetName(name);
   }
 
-  Equals(comparePlayer) {
+  Equals(comparePlayer: Player) {
     return comparePlayer instanceof Player
       ? comparePlayer.GetName() === this.name
       : false;
@@ -22,11 +22,11 @@ export default class Player {
     return this.name;
   }
 
-  SetInitiation(init) {
-    this.initiation = Number.isNaN(parseFloat(init)) ? 0 : parseFloat(init);
+  SetInitiation(init: number) {
+    this.initiation = Number.isNaN(init) ? 0 : init;
   }
 
-  SetName(name) {
+  SetName(name: string) {
     this.name = String(name);
   }
 }
