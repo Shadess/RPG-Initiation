@@ -29,7 +29,10 @@
     "import/no-unresolved": 0,
     "import/prefer-default-export": 0,
     "react/destructuring-assignment": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".ts", ".tsx", ".svg"] }
+    ],
     "react/no-array-index-key": 2,
     "react/prefer-stateless-function": 0,
     "react/prop-types": 0,

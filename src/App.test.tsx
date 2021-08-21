@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import { Provider } from 'react-redux';
+// import { Provider } from 'react-redux';
 // import { mocked } from 'ts-jest/utils';
-import { store } from './store/store';
+// import { store } from './store/store';
 import App from './App';
-import { FirebaseContext } from './components/Firebase';
-import Firebase from './components/Firebase/firebase';
+// import { FirebaseContext } from './components/Firebase';
+// import Firebase from './components/Firebase/firebase';
 
 jest.mock('firebase', () => {
   const auth = () => jest.fn();
@@ -84,14 +84,13 @@ jest.mock('firebaseui', () => ({
 // });
 
 test('renders learn react link', () => {
-  // render(
-  //   <Provider store={store}>
-  //     <FirebaseContext.Provider value={new Firebase()}>
-  //       <App />
-  //     </FirebaseContext.Provider>
-  //   </Provider>,
-  // );
-  // const linkElement = screen.getByText(/Welcome to RPG Initiation/i);
-  // expect(linkElement).toBeInTheDocument();
-  expect(true);
+  render(
+    // <Provider store={store}>
+    // <FirebaseContext.Provider value={new Firebase()}>
+    <App />,
+    // </FirebaseContext.Provider>
+    // </Provider>,
+  );
+  const linkElement = screen.getByText(/Welcome to RPG Initiation/i);
+  expect(linkElement).toBeInTheDocument();
 });
