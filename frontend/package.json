@@ -28,7 +28,7 @@
     "nuke-windows": "rmdir /s node_modules && yarn",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint src/**",
+    "lint": "eslint src/** --no-error-on-unmatched-pattern",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "watch": "npm-watch"
