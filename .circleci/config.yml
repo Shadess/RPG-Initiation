@@ -6,9 +6,11 @@ orbs:
   node: circleci/node@4.5.1
 # Orchestrate or schedule a set of jobs
 workflows:
-    example-workflow:
-      jobs:
-        - node/test:
-            pkg-manager: yarn 
-            run-command: test 
-            version: '14.17.3' 
+  example-workflow:
+    jobs:
+      - command:
+        run: "cd frontend"
+      - node/test:
+          pkg-manager: yarn
+          run-command: test
+          version: "14.17.3"
