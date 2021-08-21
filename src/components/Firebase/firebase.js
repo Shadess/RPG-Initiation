@@ -15,9 +15,6 @@ const config = {
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
-// const ui = new firebaseui.auth.AuthUI(firebase.auth());
-// ui.start('#firebaseui-auth-container', uiConfig);
-
 class Firebase {
   constructor() {
     app.initializeApp(config);
