@@ -32,6 +32,6 @@ jobs:
           command: cd frontend && yarn build
 # Orchestrate or schedule a set of jobs
 workflows:
-  example-workflow:
+  continuous-integration:
     jobs:
       - build
