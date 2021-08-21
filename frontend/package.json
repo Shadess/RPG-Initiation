@@ -23,6 +23,7 @@
     "typescript": "^4.3.5"
   },
   "scripts": {
+    "delete": "rmdir /s node_modules",
     "nuke": "rm -rf node_modules && yarn",
     "nuke-windows": "rmdir /s node_modules && yarn",
     "start": "react-scripts start",
