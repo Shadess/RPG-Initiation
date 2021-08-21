@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import Firebase from 'components/Firebase/firebase';
+import { createContext } from 'react';
 import { store } from './store/store';
 import App from './App';
-import { FirebaseContext } from './components/Firebase';
 
 jest.mock('firebase/app', () => {
   const auth = () => jest.fn();
@@ -23,69 +24,29 @@ jest.mock('firebaseui', () => ({
   },
 }));
 
-const FirebaseStub = () => {
-  const auth = () => jest.fn();
-  auth.onAuthStateChanged = jest.fn();
-  auth.app = jest.fn();
-  auth.applyActionCode = jest.fn();
-  auth.checkActionCode = jest.fn();
-  auth.confirmPasswordReset = jest.fn();
-  auth.createUserWithEmailAndPassword = jest.fn();
-  auth.currentUser = jest.fn();
-  auth.fetchSignInMethodsForEmail = jest.fn();
-  auth.isSignInWithEmailLink = jest.fn();
-  auth.getRedirectResult = jest.fn();
-  auth.languageCode = jest.fn();
-  auth.settings = jest.fn();
-  auth.onIdTokenChanged = jest.fn();
-  auth.sendSignInLinkToEmail = jest.fn();
-  auth.sendPasswordResetEmail = jest.fn();
-  auth.setPersistence = jest.fn();
-  auth.signInAndRetrieveDataWithCredential = jest.fn();
-  auth.signInAnonymously = jest.fn();
-  auth.signInWithCredential = jest.fn();
-  auth.signInWithCustomToken = jest.fn();
-  auth.signInWithEmailAndPassword = jest.fn();
-  auth.signInWithPhoneNumber = jest.fn();
-  auth.signInWithEmailLink = jest.fn();
-  auth.signInWithPopup = jest.fn();
-  auth.signInWithRedirect = jest.fn();
-  auth.signOut = jest.fn();
-  auth.tenantId = jest.fn();
-  auth.updateCurrentUser = jest.fn();
-  auth.useDeviceLanguage = jest.fn();
-  auth.useEmulator = jest.fn();
-  auth.verifyPasswordResetCode = jest.fn();
+const MockedFirebaseClass = Firebase as jest.Mocked<typeof Firebase>;
+const MockedFirebaseInstance = new MockedFirebaseClass();
+const MockedFirebaseContext = createContext<Firebase>(MockedFirebaseInstance);
 
-  const ui = () => jest.fn();
-  ui.start = jest.fn();
-  ui.disableAutoSignIn = jest.fn();
-  ui.setConfig = jest.fn();
-  ui.signIn = jest.fn();
-  ui.reset = jest.fn();
-  ui.delete = jest.fn();
-  ui.isPendingRedirect = jest.fn();
-
-  return {
-    auth,
-    ui,
-    uiConfig: {
-      callbacks: { signInSuccessWithAuthResult: jest.fn(), uiShown: jest.fn() },
-      signInOptions: [],
-    },
-    StartUI: jest.fn(),
-  };
-};
-const FirebaseMock = (() => FirebaseStub())();
+jest.mock('./components/Firebase/context', () => ({
+  get useFirebase() {
+    const auth = () => jest.fn();
+    auth.onAuthStateChanged = jest.fn();
+    const ui = () => jest.fn();
+    ui.start = jest.fn();
+    return () => ({ auth, ui });
+  },
+}));
 
 test('renders learn react link', () => {
   render(
     <Provider store={store}>
-      <FirebaseContext.Provider value={FirebaseMock}>
-        <App />,
-      </FirebaseContext.Provider>
+      <MockedFirebaseContext.Provider value={MockedFirebaseInstance}>
+        <App />
+      </MockedFirebaseContext.Provider>
     </Provider>,
   );
+
   const linkElement = screen.getByText(/Welcome to RPG Initiation/i);
   expect(linkElement).toBeInTheDocument();
 });
