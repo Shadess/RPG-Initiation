@@ -8,8 +8,8 @@ orbs:
 workflows:
   example-workflow:
     jobs:
-      - command:
-        run: "cd frontend"
+      - run:
+        command: cd frontend
       - node/test:
           pkg-manager: yarn
           run-command: test
