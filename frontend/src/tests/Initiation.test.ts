@@ -1,4 +1,3 @@
-import { expect } from 'jest';
 import { store } from '../store/store';
 import {
   addPlayer,
@@ -9,7 +8,7 @@ import {
 } from '../store/initiationSlice';
 import Player from '../models/Player';
 
-let rootState;
+let rootState: { initiation: { players: Player[] } };
 const testPlayer = new Player('joe', 2);
 const testPlayer2 = new Player('john', 18.3);
 const testPlayer3 = new Player('jeff', 12.3);

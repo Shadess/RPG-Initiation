@@ -3,12 +3,35 @@ version: 2.1
 # Use a package of configuration called an orb.
 orbs:
   # Declare a dependency on the welcome-orb
-  node: circleci/node@4.5.1
+  node: circleci/node@4.7.0
+jobs:
+  build:
+    docker:
+      - image: cimg/node:14.17.3
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1.0.0-deps-{{ checksum "frontend/yarn.lock" }}
+            - v1.0.0-deps-
+      - run:
+          name: Package Install
+          command: cd frontend && yarn install --frozen-lockfile
+      - save_cache:
+          key: v1.0.0-deps-{{ checksum "frontend/yarn.lock" }}
+          paths:
+            - frontend/node_modules
+      - run:
+          name: Lint Check
+          command: cd frontend && yarn lint
+      - run:
+          name: Test Frontend
+          command: cd frontend && yarn test
+      - run:
+          name: Frontend Build
+          command: cd frontend && yarn build
 # Orchestrate or schedule a set of jobs
 workflows:
-    example-workflow:
-      jobs:
-        - node/test:
-            pkg-manager: yarn 
-            run-command: test 
-            version: '14.17.3' 
+  example-workflow:
+    jobs:
+      - build
