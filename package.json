@@ -12,6 +12,7 @@
     "@sentry/tracing": "^6.10.0",
     "bootstrap": "^5.0.2",
     "cra-template": "1.1.2",
+    "eslint": "^7.32.0",
     "firebase": "^8.7.1",
     "firebaseui": "^4.8.0",
     "react": "^17.0.2",
@@ -26,6 +27,7 @@
     "nuke-windows": "rmdir /s node_modules && yarn",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "eslint src/**",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "watch": "npm-watch"
